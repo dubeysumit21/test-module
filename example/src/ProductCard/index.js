@@ -3,8 +3,8 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, Button } from 'react-n
 import Cross from '../../assets/close.png';
 
 const styles = StyleSheet.create({
-    mainBody: { width: '95%', height: 150, borderWidth: 1, borderColor: '#CCCCCC', marginBottom: 10, alignItems: 'center', justifyContent: 'space-evenly' }, 
-    imageStyle: { width: 235, height: 105 },
+    mainBody: { width: '80%', height: 150, borderWidth: 1, borderColor: '#CCCCCC', marginBottom: 10, alignItems: 'center', justifyContent: 'space-evenly' }, 
+    imageStyle: { width: 305, height: 125 },
     detailImageStyle:  { width: 95, height: 95 },
     detailsContainer: { flexDirection: 'row', width: '100%', justifyContent: 'space-around' },
     mainInfo: { justifyContent: 'center' },

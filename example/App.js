@@ -10,10 +10,10 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
   StatusBar,
+  FlatList,
 } from 'react-native';
 import { Button, Spinner } from 'native-base';
 import axios from 'axios';
@@ -95,9 +95,13 @@ class App extends React.Component {
     let returnValue;
     if(receivedItem.length > 0){
       returnValue = 
-      (<ScrollView contentContainerStyle={styles.scrollStyle} style={{ width: '100%', height: 320 }}>
-      { receivedItem && receivedItem.map(im => <ProductCard item={im} showDetails={this.showDetails}/>) }
-      </ScrollView>);
+      (<FlatList
+          contentContainerStyle={styles.scrollStyle}
+          style={{ height: 320 }}
+          data={receivedItem}
+          renderItem={({ item }) => <ProductCard item={item} showDetails={this.showDetails}/>}
+          keyExtractor={item => item.id}
+        />)
     } else if(loading) {
       returnValue = <Spinner />;
     }
@@ -134,7 +138,7 @@ const styles = StyleSheet.create({
   headingText: { color: '#AD0028', width: '100%', textAlign: 'center', fontSize: 26, paddingHorizontal: 20 },
   btnStyle: { alignSelf: 'center', width:'50%', backgroundColor: '#AD0028', marginVertical: 25 },
   btnText: { color: '#FFFFFF', width: '100%', textAlign: 'center', fontSize: 16 },
-  scrollStyle: { justifyContent: 'center', alignItems: 'center' },
+  scrollStyle: { justifyContent: 'center', alignItems: 'center', width: '98%' },
 });
 
 export default App;
