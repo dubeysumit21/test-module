@@ -22,7 +22,7 @@ const GetImageDetails = props => {
                     <Text>Tags : </Text>
                     <Text>{item.tags}</Text>
                 </View>
-                <Text>Image ID : {item.type}</Text>
+                <Text>Image Type : {item.type}</Text>
             </View>
         </View>
     );
